@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Products } from './components/products';
-import { Filters } from './components/Filters.jsx';
-import { useFilteredProducts } from './hooks/useFilteredProducts.js';
-import { Cart } from './components/Cart.jsx';
-import { CartProvider } from './components/context/Cart.jsx';
+import { Filters } from './components/Filters';
+import { useFilteredProducts } from './hooks/useFilteredProducts';
+import { Cart } from './components/Cart';
+import { CartProvider } from './components/context/Cart';
+import type { Product, ProductsResponse } from './types';
 
 function App() {
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
-      .then((res) => res.json())
+      .then((res) => res.json() as Promise<ProductsResponse>)
       .then((data) => {
         setProductData(data.products);
       })

@@ -1,6 +1,7 @@
 import { useFilters } from './useFilters';
+import type { Product } from '../types';
 
-export function useFilteredProducts(products) {
+export function useFilteredProducts(products: Product[]) {
   const { filters } = useFilters();
 
   return products.filter((product) => {

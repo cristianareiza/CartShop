@@ -1,6 +1,6 @@
 # 🛍️ React Shopping Cart
 
-Este es un proyecto desarrollado con **React + Vite**, que implementa un carrito de compras funcional utilizando el **Context API** y Hooks personalizados. Además, se incluye configuración con **ESLint** y **Prettier** para mantener un código limpio y consistente.
+Este es un proyecto desarrollado con **React + TypeScript + Vite**, que implementa un carrito de compras funcional utilizando el **Context API** y Hooks personalizados. Además, se incluye configuración con **ESLint** y **Prettier** para mantener un código limpio y consistente.
 
 ---
 
@@ -23,4 +23,4 @@ Este es un proyecto desarrollado con **React + Vite**, que implementa un carrito
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Context API](https://reactjs.org/docs/context.html)
-- [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [TypeScript](https://www.typescriptlang.org/) (modo `strict`)

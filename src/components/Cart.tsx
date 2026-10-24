@@ -1,6 +1,6 @@
 import './Cart.css';
-import React, { useId } from 'react';
-import { CartIcon, ClearCartIcon } from './icons.jsx';
+import { useId } from 'react';
+import { CartIcon, ClearCartIcon } from './icons';
 import { useCart } from '../hooks/useCart';
 
 export function Cart() {

@@ -1,11 +1,21 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, type ReactNode } from 'react';
+import type { CartItem, Product } from '../../types';
 
-export const cartContext = createContext();
+export interface CartContextValue {
+  cart: CartItem[];
+  addToCart: (product: Product) => void;
+  clearCart: () => void;
+  removeFromCart: (product: Product) => void;
+}
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+export const cartContext = createContext<CartContextValue | undefined>(
+  undefined
+);
 
-  const addToCart = (product) => {
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  const addToCart = (product: Product) => {
     setCart((prevCart) => {
       const productInCart = prevCart.find((item) => item.id === product.id);
       if (productInCart) {
@@ -21,7 +31,7 @@ export function CartProvider({ children }) {
   };
 
   const clearCart = () => setCart([]);
-  const removeFromCart = (product) => {
+  const removeFromCart = (product: Product) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
   };
 

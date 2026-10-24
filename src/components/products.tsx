@@ -1,9 +1,13 @@
 import { useCart } from '../hooks/useCart';
 import { AddToCartIcon } from './icons';
-export function Products({ products = [] }) {
-  const { addToCart, cart } = useCart();
+import type { Product } from '../types';
+interface ProductsProps {
+  products?: Product[];
+}
 
-  console.log('CARRITO:', cart);
+export function Products({ products = [] }: ProductsProps) {
+  const { addToCart } = useCart();
+
   return (
     <main className="products">
       <ul>
